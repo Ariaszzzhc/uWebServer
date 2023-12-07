@@ -3,4 +3,8 @@
 compile_commands.json
 *.code-workspace
 *.o
+*.lib
 build
+*.so
+*.dylib
+*.dll
