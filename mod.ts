@@ -7,10 +7,15 @@ const lib = Deno.dlopen("./native/build/uWebServer.so", {
     parameters: [],
     result: "pointer",
   },
+  uws_app_serve: {
+    parameters: ["pointer"],
+    result: "void",
+    nonblocking: true,
+  },
 });
 
-const { uws_create_app } = lib.symbols;
+const { uws_create_app, uws_app_serve } = lib.symbols;
 
 const a = uws_create_app();
 
-console.log(a);
+await uws_app_serve(a);
