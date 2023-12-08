@@ -2,7 +2,7 @@
 // export type HttpServer
 
 // export function serve(handler: ServeHandler): HttpServer;
-const lib = Deno.dlopen("./native/build/uWebServer.so", {
+const lib = Deno.dlopen("./build/uWebServer.so", {
   uws_create_app: {
     parameters: [],
     result: "pointer",
